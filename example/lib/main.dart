@@ -2,6 +2,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+
+import 'package:image_picker_android/image_picker_android.dart';
+import 'package:image_picker_platform_interface/image_picker_platform_interface.dart';
+
 import 'package:path_provider/path_provider.dart';
 import 'dart:async';
 import 'package:screenshot/screenshot.dart';
@@ -223,12 +227,7 @@ class _MyAppState extends State<MyApp> {
                         onPressed: () async {
                           SocialShare.shareTwitter(
                             "This is Social Share twitter example with link.  ",
-                            hashtags: [
-                              "SocialSharePlugin",
-                              "world",
-                              "foo",
-                              "bar"
-                            ],
+                            hashtags: ["SocialSharePlugin", "world", "foo", "bar"],
                             url: "https://google.com/hello",
                             trailingText: "cool!!",
                           ).then((data) {
